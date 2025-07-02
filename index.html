@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Nishad | Portfolio</title>
+  <link rel="icon" type="image/svg+xml" href="assets/apple-logo.svg" />
+  <link rel="stylesheet" href="portfolio.css" />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <!-- Use Inter or SF Pro Display for Apple-like feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+</head>
+<body>
+  <div class="main-bg">
+    <div class="container">
+      <!-- Add this toggle button just inside your <body> container, after <div class="container"> -->
+      <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
+        <span class="toggle-icon" id="theme-toggle-icon">🌙</span>
+      </button>
+
+      <header class="navbar">
+        <nav>
+          <a href="#home">
+            <!-- Home SVG -->
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 11 4l8 6.5"/><path d="M4 10v7a1 1 0 0 0 1 1h3v-4h4v4h3a1 1 0 0 0 1-1v-7"/></svg>
+            Home
+          </a>
+          <a href="#about">
+            <!-- User SVG -->
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="7" r="4"/><path d="M3 19c0-3.5 3.5-6 8-6s8 2.5 8 6"/></svg>
+            About
+          </a>
+          <a href="#projects">
+            <!-- Briefcase SVG -->
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="16" height="11" rx="2"/><path d="M8 7V5a3 3 0 0 1 6 0v2"/></svg>
+            Projects
+          </a>
+          <a href="#certifications">
+            <!-- Certificate SVG -->
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M12 14v6m3-3h-6"/></svg>
+            Certifications
+          </a>
+          <a href="#contact">
+            <!-- Mail SVG -->
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="16" height="14" rx="2"/><path d="m3 7 8 6 8-6"/></svg>
+            Contact
+          </a>
+        </nav>
+      </header>
+
+      <section id="home" class="hero animated-section">
+        <div class="hero-content">
+          <div class="hero-text">
+            <h1>Hi, I'm Nishad</h1>
+            <p class="subtitle">
+              <!-- Shield SVG -->
+              <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
+              Cyber Security Enthusiast & Web Developer
+            </p>
+            <p class="hero-intro">
+              I design and build secure, beautiful digital experiences.<br>
+              <span>Driven by curiosity. Focused on impact.</span>
+            </p>
+            <div class="hero-actions">
+              <a href="#projects" class="btn-primary">
+                <!-- Briefcase SVG -->
+                <svg class="btn-icon" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M7 7V5a3 3 0 0 1 6 0v2"/></svg>
+                View Projects
+              </a>
+              <a href="assets/My CV - Generalised.pdf" class="btn-secondary" download>
+                <!-- Download SVG -->
+                <svg class="btn-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v10m0 0-4-4m4 4 4-4"/><rect x="4" y="17" width="16" height="2" rx="1"/></svg>
+                Download Resume
+              </a>
+            </div>
+            <div class="hero-socials">
+              <a href="https://github.com/your-github-username" target="_blank" class="social-link" aria-label="GitHub">
+                <!-- GitHub SVG -->
+                <svg class="social-id" width="28" height="28" fill="none" stroke="#222" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+              </a>
+              <a href="https://linkedin.com/in/nishad-sharma" target="_blank" class="social-link" aria-label="LinkedIn">
+                <!-- LinkedIn SVG -->
+                <svg width="28" height="28" fill="none" stroke="#222" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 8v8M7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 4v4m0-4a2 2 0 1 1 4 0v4"/></svg>
+              </a>
+              <a href="https://tryhackme.com/p/your-tryhackme-username" target="_blank" class="social-link" aria-label="TryHackMe">
+                <!-- TryHackMe minimalist SVG (padlock with smile) -->
+                <svg width="28" height="28" fill="none" stroke="#222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                  <rect x="5" y="10" width="14" height="9" rx="3"/>
+                  <path d="M8 10V7a4 4 0 1 1 8 0v3"/>
+                  <path d="M9.5 15c.5.5 1.5.5 2 .5s1.5 0 2-.5"/>
+                  <circle cx="10" cy="14" r="0.5" fill="#222"/>
+                  <circle cx="14" cy="14" r="0.5" fill="#222"/>
+                </svg>
+              </a>
+              <a href="https://leetcode.com/NishadSharma" target="_blank" class="social-link" aria-label="LeetCode">
+                <!-- LeetCode SVG -->
+                <svg width="28" height="28" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                  <g>
+                    <path d="M36.5 33.5L16.5 13.5" stroke="#FFA116" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M25 44C14.5066 44 6 35.4934 6 25C6 14.5066 14.5066 6 25 6C33.2843 6 40.5 12.402 42.5 20.5" stroke="#292D3E" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M33.5 36.5L42.5 27.5L33.5 18.5" stroke="#292D3E" stroke-width="3" stroke-linecap="round"/>
+                  </g>
+                </svg>
+              </a>
+            </div>
+          </div>
+          <!-- Make profile picture bigger -->
+          <img src="assets/your-photo.jpg" alt="Nishad" class="hero-profile-img hero-profile-img-large" />
+        </div>
+      </section>
+
+      <section id="about" class="about-section animated-section">
+        <h2>
+          <!-- Shield SVG -->
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
+          About Me
+        </h2>
+        <div class="about-content">
+          <div>
+            <p>
+              I’m a <strong>Cyber Security Enthusiast</strong> with a passion for building secure, user-focused web applications. I thrive on solving complex problems and believe in design that’s as functional as it is beautiful.
+            </p>
+            <div class="education-details">
+              <h4>
+                <!-- Shield SVG -->
+                <svg class="edu-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
+                Education
+              </h4>
+              <ul class="edu-list">
+                <li>
+                  <div class="edu-row">
+                    <div class="edu-main">
+                      <span class="edu-institute">Lovely Professional University</span><br>
+                      <span class="edu-degree">B.Tech - <em>Computer Science & Engineering</em>; <strong>CGPA: 7.10</strong></span>
+                    </div>
+                    <div class="edu-meta">
+                      <span>Phagwara, Punjab</span><br>
+                      <span class="edu-date">Since Sept 2022</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="edu-row">
+                    <div class="edu-main">
+                      <span class="edu-institute">Kendriya Vidyalaya</span><br>
+                      <span class="edu-degree">Intermediate; <strong>Percentage: 65%</strong></span>
+                    </div>
+                    <div class="edu-meta">
+                      <span>Dharamshala, Himachal Pradesh</span><br>
+                      <span class="edu-date">Apr 2021 - Mar 2022</span>
+                    </div>
+                  </div>
+                </li>
+                <li>
+                  <div class="edu-row">
+                    <div class="edu-main">
+                      <span class="edu-institute">Kendriya Vidyalaya</span><br>
+                      <span class="edu-degree">Matriculation; <strong>Percentage: 81%</strong></span>
+                    </div>
+                    <div class="edu-meta">
+                      <span>Dharamshala, Himachal Pradesh</span><br>
+                      <span class="edu-date">Apr 2019 - Mar 2020</span>
+                    </div>
+                  </div>
+                </li>
+              </ul>
+            </div>
+            <div class="skills-mini">
+              <h4>
+                <!-- Shield SVG -->
+                <svg class="edu-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
+                Skills
+              </h4>
+              <ul>
+                <li><strong>Cyber Security:</strong> Digital Forensics, Ethical Hacking, PenTesting, Network Security, CTFs</li>
+                <li><strong>Technical:</strong> Linux, WebDev, SQL Database, Java, DSA</li>
+                <li><strong>Soft:</strong> Analytical Thinking, Problem Solving, Communication</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="projects" class="projects-section animated-section">
+        <h2>
+          <!-- Briefcase SVG -->
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M7 7V5a3 3 0 0 1 6 0v2"/></svg>
+          Projects
+        </h2>
+        <div class="projects-grid">
+          <div class="project-card animated-pop">
+            <div class="project-img" style="background-image: url('assets/project-1.png');"></div>
+            <h3>
+              <!-- Portfolio SVG -->
+              <svg class="card-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 5V3a3 3 0 0 1 6 0v2"/></svg>
+              Modern Portfolio
+            </h3>
+            <p>Responsive, accessible portfolio site inspired by Apple’s design language. Built with HTML, CSS, and JavaScript.</p>
+          </div>
+          <div class="project-card animated-pop">
+            <div class="project-img" style="background-image: url('assets/project-2.png');"></div>
+            <h3>
+              <!-- Task SVG -->
+              <svg class="card-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 9h6M7 13h4"/></svg>
+              Password Strength Checker
+            </h3>
+            <p>Full-stack productivity app with authentication, real-time updates, and a clean, modern UI.</p>
+          </div>
+          <div class="project-card animated-pop">
+            <div class="project-img" style="background-image: url('assets/project-dashboard.png');"></div>
+            <h3>
+              <!-- Chart SVG -->
+              <svg class="card-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 13v-2m3 2V9m3 6v-4"/></svg>
+              API Dashboard
+            </h3>
+            <p>Interactive dashboard for visualizing and analyzing real-time API data, featuring advanced filtering and export options.</p>
+          </div>
+        </div>
+      </section>
+
+      <section id="certifications" class="certifications-section animated-section">
+        <h2>
+          <!-- Certificate SVG -->
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M12 14v6m3-3h-6"/></svg>
+          Certifications
+        </h2>
+        <div class="certifications-grid">
+          <div class="cert-card-v2">
+            <div class="cert-img" style="background-image: url('assets/cloud.png');"></div>
+            <div class="cert-info">
+              <strong>NPTEL Cloud Computing by IIT Kharagpur</strong>
+              <span class="cert-meta">Jul 2024 – Oct 2024</span>
+              <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS118S167020178804431793" target="_blank" class="cert-link">Verify Certificate</a>
+            </div>
+          </div>
+          <div class="cert-card-v2">
+            <div class="cert-img" style="background-image: url('assets/java.png');"></div>
+            <div class="cert-info">
+              <strong>Master Java Programming by GeeksForGeeks</strong>
+              <span class="cert-meta">Jan 2024 – Apr 2024</span>
+              <a href="https://media.geeksforgeeks.org/courses/certificates/3355023c5944e1621ba0e3dbd5433601.pdf" target="_blank" class="cert-link">Verify Certificate</a>
+            </div>
+          </div>
+          <div class="cert-card-v2">
+            <div class="cert-img" style="background-image: url('assets/dsa.png');"></div>
+            <div class="cert-info">
+              <strong>Mastering Data Structures using C & C++ by Udemy</strong>
+              <span class="cert-meta">Jun 2023 – Dec 2023</span>
+              <a href="https://www.udemy.com/certificate/UC-ee3f747b-855f-4264-bb68-fb169ce7f888/" target="_blank" class="cert-link">Verify Certificate</a>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <section id="contact" class="contact-section animated-section">
+        <h2>
+          <!-- Mail SVG -->
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="16" height="14" rx="2"/><path d="m3 7 8 6 8-6"/></svg>
+          Contact
+        </h2>
+        <form id="contactForm" class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
+          <input type="text" name="name" id="name" placeholder="Your Name" required />
+          <input type="email" name="email" id="email" placeholder="Your Email" required />
+          <textarea name="message" id="message" placeholder="Your Message" required></textarea>
+          <button type="submit" class="btn-primary">
+            <!-- Send SVG -->
+            <svg class="btn-icon" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/></svg>
+            Send Message
+          </button>
+          <p id="formMessage"></p>
+        </form>
+      </section>
+
+      <footer>
+        <p>&copy; <span id="year"></span> Nishad. All rights reserved.</p>
+      </footer>
+    </div>
+  </div>
+  <script>
+    // Set current year in footer
+    document.getElementById('year').textContent = new Date().getFullYear();
+  </script>
+  <script src="portfolio.js"></script>
+</body>
+</html>
