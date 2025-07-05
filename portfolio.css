@@ -3,8 +3,12 @@
   padding: 0;
 }
 
+body, .main-bg, .hero, .about-section, .projects-section, .certifications-section, .contact-section {
+  transition: background 0.4s cubic-bezier(.4,0,.2,1), color 0.4s cubic-bezier(.4,0,.2,1);
+}
+
+/* Soft radial gradients and a gentle linear gradient for depth */
 body, .main-bg {
-  /* Soft radial gradients and a gentle linear gradient for depth */
   background:
     repeating-radial-gradient(circle at 20% 40%, #eaf1fb 0 1.5px, transparent 1.5px 100%),
     repeating-radial-gradient(circle at 80% 70%, #eaf1fb 0 1.5px, transparent 1.5px 100%),
@@ -1089,6 +1093,33 @@ footer {
   }
 }
 
+/* --- Testimonials --- */
+.testimonials-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.testimonial-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(30,40,90,0.08);
+  padding: 1.2rem 1.3rem;
+  max-width: 340px;
+  font-style: italic;
+  margin-bottom: 1.2rem;
+}
+body.dark-mode .testimonial-card {
+  background: #181a20;
+  color: #e6e6ea;
+}
+.testimonial-author {
+  display: block;
+  margin-top: 0.7em;
+  font-size: 0.97em;
+  font-style: normal;
+  color: #0071e3;
+}
+
 /* --- Theme Toggle Button --- */
 .theme-toggle {
   position: fixed;
@@ -1180,7 +1211,7 @@ body.dark-mode .theme-toggle:hover {
 }
 body.dark-mode input,
 body.dark-mode textarea {
-  background: #181c22 !important;
+  background: #181a20 !important;
   color: #f7fafd !important;
   border-color: #22304a !important;
 }
@@ -1525,4 +1556,45 @@ body.dark-mode .social-link:hover img {
 }
 .project-card:hover .project-img {
   filter: brightness(1.08) saturate(1.1);
+}
+.blog-grid {
+  display: flex;
+  gap: 2rem;
+  flex-wrap: wrap;
+}
+.blog-card {
+  background: rgba(255,255,255,0.92);
+  border-radius: 14px;
+  box-shadow: 0 4px 16px rgba(30,40,90,0.08);
+  padding: 1.2rem 1.3rem;
+  max-width: 340px;
+  margin-bottom: 1.2rem;
+}
+body.dark-mode .blog-card {
+  background: #181a20;
+  color: #e6e6ea;
+}
+.blog-link {
+  color: #0071e3;
+  text-decoration: underline;
+  font-weight: 600;
+}
+body.dark-mode .blog-link {
+  color: #7ab4fa;
+}
+.stats-row {
+  display: flex;
+  gap: 1.2rem;
+  align-items: center;
+  margin: 1.2rem 0;
+  flex-wrap: wrap;
+}
+.stats-row img {
+  height: 32px;
+  border-radius: 6px;
+  background: #fff;
+  box-shadow: 0 2px 8px rgba(30,40,90,0.07);
+}
+body.dark-mode .stats-row img {
+  background: #181a20;
 }

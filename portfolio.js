@@ -92,3 +92,11 @@ document.querySelectorAll('img, .cert-img, .project-img').forEach(img => {
 // To use EmailJS, include the script in your HTML file, not here.
 // Then, initialize EmailJS in your JS file like this (after the script is loaded):
 // emailjs.init("YOUR_USER_ID");
+
+// GSAP animations for sections
+document.querySelectorAll('.animated-section').forEach((section, i) => {
+  gsap.fromTo(section, 
+    { opacity: 0, y: 60 }, 
+    { opacity: 1, y: 0, duration: 0.8, delay: i * 0.15, ease: "power2.out", scrollTrigger: section }
+  );
+});
