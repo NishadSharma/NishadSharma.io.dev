@@ -12,7 +12,31 @@
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
 </head>
 <body>
-  <div class="main-bg">
+  <div id="splash" class="splash-screen">
+    <div class="splash-bg-pattern"></div>
+    <div class="splash-content">
+      <!-- Minimalistic animated logo (animated lock+N) -->
+      <div class="splash-logo-anim" aria-label="Nishad Logo">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
+          <!-- Lock body -->
+          <rect x="20" y="36" width="40" height="28" rx="9" stroke="currentColor" stroke-width="4" fill="none"/>
+          <!-- Lock shackle (animated) -->
+          <path id="lock-shackle" d="M28 36V28a12 12 0 1 1 24 0v8" stroke="currentColor" stroke-width="4" fill="none"/>
+          <!-- N letter (animated) -->
+          <text id="logo-n" x="40" y="60" text-anchor="middle" font-size="26" font-family="Inter, sans-serif" fill="currentColor" font-weight="bold">N</text>
+        </svg>
+      </div>
+      <h1>Welcome to Nishad's Portfolio</h1>
+      <p class="splash-tagline">Cyber Security Enthusiast & Web Developer</p>
+      <button id="enter-portfolio" class="btn-primary splash-btn">
+        Enter Portfolio
+      </button>
+      <button id="splash-theme-toggle" aria-label="Toggle dark mode" class="theme-toggle splash-theme-toggle">
+        <span class="toggle-icon" id="splash-theme-toggle-icon">🌙</span>
+      </button>
+    </div>
+  </div>
+  <div class="main-bg" id="main-content" style="display:none;">
     <div class="container">
       <!-- Add this toggle button just inside your <body> container, after <div class="container"> -->
       <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
@@ -55,7 +79,7 @@
             <h1>Hi, I'm Nishad</h1>
             <p class="subtitle">
               <!-- Shield SVG -->
-              <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
+              <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
               Cyber Security Enthusiast & Web Developer
             </p>
             <p class="hero-intro">
@@ -68,7 +92,7 @@
                 <svg class="btn-icon" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M7 7V5a3 3 0 0 1 6 0v2"/></svg>
                 View Projects
               </a>
-              <a href="assets/My CV - Generalised.pdf" class="btn-secondary" download>
+              <a href="assets/Nishad_Resume_Cyber.pdf" class="btn-secondary" download>
                 <!-- Download SVG -->
                 <svg class="btn-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v10m0 0-4-4m4 4 4-4"/><rect x="4" y="17" width="16" height="2" rx="1"/></svg>
                 Download Resume
@@ -77,29 +101,31 @@
             <div class="hero-socials">
               <a href="https://github.com/NishadSharma" target="_blank" class="social-link" aria-label="GitHub">
                 <!-- GitHub SVG -->
-                <svg class="social-id" width="28" height="28" fill="none" stroke="#222" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+                <svg class="social-id" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
               </a>
               <a href="https://linkedin.com/in/nishad-sharma" target="_blank" class="social-link" aria-label="LinkedIn">
-                <!-- LinkedIn SVG -->
-                <svg width="28" height="28" fill="none" stroke="#222" stroke-width="1.5" viewBox="0 0 24 24"><rect x="2" y="2" width="20" height="20" rx="4"/><path d="M7 8v8M7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 4v4m0-4a2 2 0 1 1 4 0v4"/></svg>
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+                  <rect x="2" y="2" width="20" height="20" rx="4"/>
+                  <path d="M7 8v8M7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 4v4m0-4a2 2 0 1 1 4 0v4"/>
+                </svg>
               </a>
               <a href="https://tryhackme.com/p/nishad05" target="_blank" class="social-link" aria-label="TryHackMe">
                 <!-- TryHackMe minimalist SVG (padlock with smile) -->
-                <svg width="28" height="28" fill="none" stroke="#222" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
                   <rect x="5" y="10" width="14" height="9" rx="3"/>
                   <path d="M8 10V7a4 4 0 1 1 8 0v3"/>
                   <path d="M9.5 15c.5.5 1.5.5 2 .5s1.5 0 2-.5"/>
-                  <circle cx="10" cy="14" r="0.5" fill="#222"/>
-                  <circle cx="14" cy="14" r="0.5" fill="#222"/>
+                  <!-- <circle cx="10" cy="14" r="0.5" fill="#222"/> -->
+                  <!-- <circle cx="14" cy="14" r="0.5" fill="#222"/> -->
                 </svg>
               </a>
               <a href="https://leetcode.com/NishadSharma" target="_blank" class="social-link" aria-label="LeetCode">
                 <!-- LeetCode SVG -->
-                <svg width="28" height="28" viewBox="0 0 50 50" fill="none" xmlns="http://www.w3.org/2000/svg">
+                <svg class="social-id" width="28" height="28" viewBox="0 0 50 50" fill="none">
                   <g>
                     <path d="M36.5 33.5L16.5 13.5" stroke="#FFA116" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M25 44C14.5066 44 6 35.4934 6 25C6 14.5066 14.5066 6 25 6C33.2843 6 40.5 12.402 42.5 20.5" stroke="#292D3E" stroke-width="3" stroke-linecap="round"/>
-                    <path d="M33.5 36.5L42.5 27.5L33.5 18.5" stroke="#292D3E" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M25 44C14.5066 44 6 35.4934 6 25C6 14.5066 14.5066 6 25 6C33.2843 6 40.5 12.402 42.5 20.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
+                    <path d="M33.5 36.5L42.5 27.5L33.5 18.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
                   </g>
                 </svg>
               </a>
@@ -227,10 +253,18 @@
         </h2>
         <div class="certifications-grid">
           <div class="cert-card-v2">
+            <div class="cert-img" style="background-image: url('assets/pre-security.png');"></div>
+            <div class="cert-info">
+              <strong>Pre Security by TryHackMe</strong>
+              <span class="cert-meta">Oct 2024</span>
+              <a href="https://tryhackme.com/certificate/THM-ZMT4DZZXPA" target="_blank" class="cert-link">Verify Certificate</a>
+            </div>
+          </div>
+          <div class="cert-card-v2">
             <div class="cert-img" style="background-image: url('assets/cloud.png');"></div>
             <div class="cert-info">
               <strong>NPTEL Cloud Computing by IIT Kharagpur</strong>
-              <span class="cert-meta">Jul 2024 – Oct 2024</span>
+              <span class="cert-meta">Oct 2024</span>
               <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS118S167020178804431793" target="_blank" class="cert-link">Verify Certificate</a>
             </div>
           </div>
@@ -238,7 +272,7 @@
             <div class="cert-img" style="background-image: url('assets/java.png');"></div>
             <div class="cert-info">
               <strong>Master Java Programming by GeeksForGeeks</strong>
-              <span class="cert-meta">Jan 2024 – Apr 2024</span>
+              <span class="cert-meta">Apr 2024</span>
               <a href="https://media.geeksforgeeks.org/courses/certificates/3355023c5944e1621ba0e3dbd5433601.pdf" target="_blank" class="cert-link">Verify Certificate</a>
             </div>
           </div>
@@ -246,7 +280,7 @@
             <div class="cert-img" style="background-image: url('assets/dsa.png');"></div>
             <div class="cert-info">
               <strong>Mastering Data Structures using C & C++ by Udemy</strong>
-              <span class="cert-meta">Jun 2023 – Dec 2023</span>
+              <span class="cert-meta">Dec 2023</span>
               <a href="https://www.udemy.com/certificate/UC-ee3f747b-855f-4264-bb68-fb169ce7f888/" target="_blank" class="cert-link">Verify Certificate</a>
             </div>
           </div>
@@ -320,5 +354,39 @@
   </script>
   <script src="portfolio.js"></script>
   <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
+  <script>
+    // Splash screen logic
+    const splash = document.getElementById('splash');
+    const mainContent = document.getElementById('main-content');
+    const enterBtn = document.getElementById('enter-portfolio');
+    const splashThemeToggle = document.getElementById('splash-theme-toggle');
+    const splashThemeIcon = document.getElementById('splash-theme-toggle-icon');
+
+    // Dark mode toggle for splash
+    function setSplashTheme(dark) {
+      document.body.classList.toggle('dark-mode', dark);
+      splashThemeIcon.textContent = dark ? '☀️' : '🌙';
+      localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
+    }
+    // Load theme from storage
+    setSplashTheme(localStorage.getItem('portfolio-theme') === 'dark');
+    splashThemeToggle.onclick = () => setSplashTheme(!document.body.classList.contains('dark-mode'));
+
+    function showPortfolio() {
+      splash.style.opacity = 0;
+      setTimeout(() => {
+        splash.style.display = 'none';
+        mainContent.style.display = '';
+      }, 700);
+    }
+    enterBtn.addEventListener('click', showPortfolio);
+    // setTimeout(showPortfolio, 2500);
+
+    // Animate lock shackle and N on splash load
+    window.addEventListener('DOMContentLoaded', () => {
+      gsap.from("#lock-shackle", { opacity: 0, y: -20, duration: 1.1, ease: "power2.out" });
+      gsap.from("#logo-n", { opacity: 0, y: 20, duration: 0.7, delay: 0.7, ease: "back.out(1.7)" });
+    });
+  </script>
 </body>
 </html>

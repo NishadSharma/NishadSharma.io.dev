@@ -100,10 +100,16 @@ document.querySelectorAll('img, .cert-img, .project-img').forEach(img => {
 
 // GSAP animations for sections
 document.querySelectorAll('.animated-section').forEach((section, i) => {
-  gsap.fromTo(section, 
-    { opacity: 0, y: 60 }, 
-    { opacity: 1, y: 0, duration: 0.8, delay: i * 0.15, ease: "power2.out", scrollTrigger: section }
-  );
+  gsap.from(section, {
+    opacity: 0,
+    y: 60,
+    duration: 0.8,
+    scrollTrigger: {
+      trigger: section,
+      start: "top 80%",
+      toggleActions: "play none none none"
+    }
+  });
 });
 
 // Scroll to top button
@@ -112,3 +118,31 @@ window.addEventListener('scroll', () => {
   btn.style.display = window.scrollY > 300 ? 'block' : 'none';
 });
 btn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
+
+// Add this in a <script> tag before </body>
+document.querySelectorAll('.animated-section').forEach(section => {
+  const observer = new IntersectionObserver(
+    ([entry]) => entry.isIntersecting && section.classList.add('visible'),
+    { threshold: 0.15 }
+  );
+  observer.observe(section);
+});
+
+// Animate SVG icons on hover
+document.querySelectorAll('.section-icon, .nav-svg-icon, .btn-icon, .card-icon, .social-id, .edu-icon').forEach(icon => {
+  icon.addEventListener('mouseenter', () => {
+    gsap.to(icon, { scale: 1.22, rotate: 8, duration: 0.22, ease: "back.out(2)" });
+  });
+  icon.addEventListener('mouseleave', () => {
+    gsap.to(icon, { scale: 1, rotate: 0, duration: 0.22, ease: "back.in(2)" });
+  });
+});
+
+document.querySelectorAll('.cert-card-v2, .project-card, .testimonial-card, .blog-card').forEach(card => {
+  card.addEventListener('mouseenter', () => {
+    gsap.to(card, { boxShadow: "0 16px 40px rgba(0,113,227,0.18)", y: -10, duration: 0.25 });
+  });
+  card.addEventListener('mouseleave', () => {
+    gsap.to(card, { boxShadow: "0 4px 16px rgba(30,40,90,0.10)", y: 0, duration: 0.25 });
+  });
+});
