@@ -48,18 +48,23 @@ document.getElementById('contactForm').addEventListener('submit', function(e) {
 });
 
 // Animate sections on scroll
-function animateOnScroll() {
-  const animatedSections = document.querySelectorAll('.animated-section');
-  const triggerBottom = window.innerHeight * 0.92;
-  animatedSections.forEach(section => {
-    const sectionTop = section.getBoundingClientRect().top;
-    if (sectionTop < triggerBottom) {
-      section.classList.add('visible');
+document.querySelectorAll('.animated-section').forEach(section => {
+  section.style.opacity = 0;
+  section.style.transform = 'translateY(40px)';
+});
+
+function animateSections() {
+  document.querySelectorAll('.animated-section').forEach(section => {
+    const rect = section.getBoundingClientRect();
+    if (rect.top < window.innerHeight - 80) {
+      section.style.transition = 'opacity 0.8s cubic-bezier(.4,0,.2,1), transform 0.8s cubic-bezier(.4,0,.2,1)';
+      section.style.opacity = 1;
+      section.style.transform = 'translateY(0)';
     }
   });
 }
-window.addEventListener('scroll', animateOnScroll);
-window.addEventListener('DOMContentLoaded', animateOnScroll);
+window.addEventListener('scroll', animateSections);
+window.addEventListener('load', animateSections);
 
 // Add .animated-section class to main sections
 document.querySelectorAll(
@@ -100,3 +105,10 @@ document.querySelectorAll('.animated-section').forEach((section, i) => {
     { opacity: 1, y: 0, duration: 0.8, delay: i * 0.15, ease: "power2.out", scrollTrigger: section }
   );
 });
+
+// Scroll to top button
+const btn = document.getElementById('scrollTopBtn');
+window.addEventListener('scroll', () => {
+  btn.style.display = window.scrollY > 300 ? 'block' : 'none';
+});
+btn.onclick = () => window.scrollTo({top:0,behavior:'smooth'});
