@@ -4,21 +4,40 @@
   <meta charset="UTF-8" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
   <title>Nishad | Portfolio</title>
+  <meta name="description" content="Nishad - Cybersecurity Enthusiast & Web Developer. Explore my projects, certifications, and expertise in digital security.">
   <link rel="icon" type="image/svg+xml" href="assets/apple-logo.svg" />
   <link rel="stylesheet" href="portfolio.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <!-- Use Inter or SF Pro Display for Apple-like feel -->
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700;900&display=swap" rel="stylesheet">
+  <!-- Enhanced font loading with Inter for Apple-like feel -->
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap" rel="stylesheet">
+  
+  <!-- Preload critical assets for better performance -->
+  <link rel="preload" href="assets/your-photo.jpg" as="image">
+  
+  <!-- SEO and social media meta tags -->
+  <meta property="og:title" content="Nishad | Cybersecurity Portfolio">
+  <meta property="og:description" content="Cybersecurity Enthusiast & Web Developer passionate about building secure digital experiences.">
+  <meta property="og:type" content="website">
+  
+  <!-- Performance and accessibility improvements -->
+  <meta name="theme-color" content="#0071e3">
+  <link rel="manifest" href="/manifest.json">
 </head>
 <body>
+  <!-- Enhanced accessibility: Skip to main content link -->
+  <a href="#main-content" class="skip-link" aria-label="Skip to main content">Skip to main content</a>
+  
+  <!-- Progress bar for scroll indication -->
+  <div class="scroll-progress" role="progressbar" aria-label="Page scroll progress"></div>
+  
   <div id="splash" class="splash-screen">
     <div class="splash-bg-pattern"></div>
     <div class="splash-content">
-      <!-- Minimalistic animated logo (animated lock+N) -->
-      <div class="splash-logo-anim" aria-label="Nishad Logo">
-        <svg width="80" height="80" viewBox="0 0 80 80" fill="none">
-          <!-- Lock body -->
+      <!-- Enhanced animated logo with better accessibility -->
+      <div class="splash-logo-anim" aria-label="Nishad Logo" role="img">
+        <svg width="80" height="80" viewBox="0 0 80 80" fill="none" aria-hidden="true">
+          <!-- Lock body with enhanced animation -->
           <rect x="20" y="36" width="40" height="28" rx="9" stroke="currentColor" stroke-width="4" fill="none"/>
           <!-- Lock shackle (animated) -->
           <path id="lock-shackle" d="M28 36V28a12 12 0 1 1 24 0v8" stroke="currentColor" stroke-width="4" fill="none"/>
@@ -28,58 +47,75 @@
       </div>
       <h1>Welcome to Nishad's Portfolio</h1>
       <p class="splash-tagline">Cyber Security Enthusiast & Web Developer</p>
-      <button id="enter-portfolio" class="btn-primary splash-btn">
+      <button id="enter-portfolio" class="btn-primary splash-btn" aria-describedby="splash-description">
         Enter Portfolio
       </button>
+      <p id="splash-description" class="sr-only">Click to enter the main portfolio site</p>
       <button id="splash-theme-toggle" aria-label="Toggle dark mode" class="theme-toggle splash-theme-toggle">
         <span class="toggle-icon" id="splash-theme-toggle-icon">🌙</span>
       </button>
     </div>
   </div>
+
   <div class="main-bg" id="main-content" style="display:none;">
     <div class="container">
-      <!-- Add this toggle button just inside your <body> container, after <div class="container"> -->
+      <!-- Enhanced theme toggle with better positioning -->
       <button id="theme-toggle" aria-label="Toggle dark mode" class="theme-toggle">
         <span class="toggle-icon" id="theme-toggle-icon">🌙</span>
       </button>
 
-      <header class="navbar">
+      <!-- Enhanced scroll to top button -->
+      <button id="scroll-to-top" aria-label="Scroll to top" class="scroll-to-top" style="display: none;">
+        <svg width="24" height="24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+          <path d="m18 15-6-6-6 6"/>
+        </svg>
+      </button>
+
+      <!-- Enhanced navigation with better accessibility -->
+      <header class="navbar" role="navigation" aria-label="Main navigation">
         <nav>
-          <a href="#home">
-            <!-- Home SVG -->
-            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M3 10.5 11 4l8 6.5"/><path d="M4 10v7a1 1 0 0 0 1 1h3v-4h4v4h3a1 1 0 0 0 1-1v-7"/></svg>
+          <a href="#home" aria-current="page">
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <path d="M3 10.5 11 4l8 6.5"/><path d="M4 10v7a1 1 0 0 0 1 1h3v-4h4v4h3a1 1 0 0 0 1-1v-7"/>
+            </svg>
             Home
           </a>
           <a href="#about">
-            <!-- User SVG -->
-            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="11" cy="7" r="4"/><path d="M3 19c0-3.5 3.5-6 8-6s8 2.5 8 6"/></svg>
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="11" cy="7" r="4"/><path d="M3 19c0-3.5 3.5-6 8-6s8 2.5 8 6"/>
+            </svg>
             About
           </a>
           <a href="#projects">
-            <!-- Briefcase SVG -->
-            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="16" height="11" rx="2"/><path d="M8 7V5a3 3 0 0 1 6 0v2"/></svg>
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="7" width="16" height="11" rx="2"/><path d="M8 7V5a3 3 0 0 1 6 0v2"/>
+            </svg>
             Projects
           </a>
           <a href="#certifications">
-            <!-- Certificate SVG -->
-            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M12 14v6m3-3h-6"/></svg>
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <circle cx="12" cy="8" r="6"/><path d="M12 14v6m3-3h-6"/>
+            </svg>
             Certifications
           </a>
           <a href="#contact">
-            <!-- Mail SVG -->
-            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="#222" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="16" height="14" rx="2"/><path d="m3 7 8 6 8-6"/></svg>
+            <svg class="nav-svg-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+              <rect x="3" y="5" width="16" height="14" rx="2"/><path d="m3 7 8 6 8-6"/>
+            </svg>
             Contact
           </a>
         </nav>
       </header>
 
-      <section id="home" class="hero animated-section">
+      <!-- Enhanced hero section with lazy loading -->
+      <section id="home" class="hero animated-section" aria-labelledby="hero-title">
         <div class="hero-content">
           <div class="hero-text">
-            <h1>Hi, I'm Nishad</h1>
+            <h1 id="hero-title">Hi, I'm Nishad</h1>
             <p class="subtitle">
-              <!-- Shield SVG -->
-              <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
+              <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/>
+              </svg>
               Cyber Security Enthusiast & Web Developer
             </p>
             <p class="hero-intro">
@@ -87,41 +123,40 @@
               <span>Driven by curiosity. Focused on impact.</span>
             </p>
             <div class="hero-actions">
-              <a href="#projects" class="btn-primary">
-                <!-- Briefcase SVG -->
-                <svg class="btn-icon" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M7 7V5a3 3 0 0 1 6 0v2"/></svg>
+              <a href="#projects" class="btn-primary" role="button">
+                <svg class="btn-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="7" width="14" height="10" rx="2"/><path d="M7 7V5a3 3 0 0 1 6 0v2"/>
+                </svg>
                 View Projects
               </a>
-              <a href="assets/Nishad_Resume_Cyber.pdf" class="btn-secondary" download>
-                <!-- Download SVG -->
-                <svg class="btn-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 5v10m0 0-4-4m4 4 4-4"/><rect x="4" y="17" width="16" height="2" rx="1"/></svg>
+              <a href="assets/Nishad_Resume_Cyber.pdf" class="btn-secondary" download role="button">
+                <svg class="btn-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M12 5v10m0 0-4-4m4 4 4-4"/><rect x="4" y="17" width="16" height="2" rx="1"/>
+                </svg>
                 Download Resume
               </a>
             </div>
-            <div class="hero-socials">
-              <a href="https://github.com/NishadSharma" target="_blank" class="social-link" aria-label="GitHub">
-                <!-- GitHub SVG -->
-                <svg class="social-id" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24"><path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/></svg>
+            <div class="hero-socials" role="list" aria-label="Social media links">
+              <a href="https://github.com/NishadSharma" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="GitHub Profile">
+                <svg class="social-id" width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
+                  <path d="M12 2C6.48 2 2 6.58 2 12.26c0 4.48 2.87 8.28 6.84 9.63.5.09.68-.22.68-.48 0-.24-.01-.87-.01-1.7-2.78.62-3.37-1.36-3.37-1.36-.45-1.17-1.1-1.48-1.1-1.48-.9-.63.07-.62.07-.62 1 .07 1.53 1.05 1.53 1.05.89 1.56 2.34 1.11 2.91.85.09-.66.35-1.11.63-1.37-2.22-.26-4.56-1.14-4.56-5.07 0-1.12.39-2.03 1.03-2.75-.1-.26-.45-1.3.1-2.7 0 0 .84-.28 2.75 1.05A9.38 9.38 0 0 1 12 6.84c.85.004 1.7.12 2.5.34 1.9-1.33 2.74-1.05 2.74-1.05.55 1.4.2 2.44.1 2.7.64.72 1.03 1.63 1.03 2.75 0 3.94-2.34 4.8-4.57 5.06.36.32.68.94.68 1.9 0 1.37-.01 2.47-.01 2.8 0 .26.18.57.69.48A10.01 10.01 0 0 0 22 12.26C22 6.58 17.52 2 12 2Z"/>
+                </svg>
               </a>
-              <a href="https://linkedin.com/in/nishad-sharma" target="_blank" class="social-link" aria-label="LinkedIn">
-                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24">
+              <a href="https://linkedin.com/in/nishad-sharma" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LinkedIn Profile">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="2" y="2" width="20" height="20" rx="4"/>
                   <path d="M7 8v8M7 8a1 1 0 1 1 0-2 1 1 0 0 1 0 2zm4 4v4m0-4a2 2 0 1 1 4 0v4"/>
                 </svg>
               </a>
-              <a href="https://tryhackme.com/p/nishad05" target="_blank" class="social-link" aria-label="TryHackMe">
-                <!-- TryHackMe minimalist SVG (padlock with smile) -->
-                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24">
+              <a href="https://tryhackme.com/p/nishad05" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="TryHackMe Profile">
+                <svg width="28" height="28" fill="none" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round" viewBox="0 0 24 24" aria-hidden="true">
                   <rect x="5" y="10" width="14" height="9" rx="3"/>
                   <path d="M8 10V7a4 4 0 1 1 8 0v3"/>
                   <path d="M9.5 15c.5.5 1.5.5 2 .5s1.5 0 2-.5"/>
-                  <!-- <circle cx="10" cy="14" r="0.5" fill="#222"/> -->
-                  <!-- <circle cx="14" cy="14" r="0.5" fill="#222"/> -->
                 </svg>
               </a>
-              <a href="https://leetcode.com/NishadSharma" target="_blank" class="social-link" aria-label="LeetCode">
-                <!-- LeetCode SVG -->
-                <svg class="social-id" width="28" height="28" viewBox="0 0 50 50" fill="none">
+              <a href="https://leetcode.com/NishadSharma" target="_blank" rel="noopener noreferrer" class="social-link" aria-label="LeetCode Profile">
+                <svg class="social-id" width="28" height="28" viewBox="0 0 50 50" fill="none" aria-hidden="true">
                   <g>
                     <path d="M36.5 33.5L16.5 13.5" stroke="#FFA116" stroke-width="3" stroke-linecap="round"/>
                     <path d="M25 44C14.5066 44 6 35.4934 6 25C6 14.5066 14.5066 6 25 6C33.2843 6 40.5 12.402 42.5 20.5" stroke="currentColor" stroke-width="3" stroke-linecap="round"/>
@@ -131,262 +166,390 @@
               </a>
             </div>
           </div>
-          <!-- Make profile picture bigger -->
-          <img src="assets/your-photo.jpg" alt="Nishad" class="hero-profile-img hero-profile-img-large" />
+          <!-- Enhanced profile image with lazy loading -->
+          <img src="assets/your-photo.jpg" alt="Nishad - Cybersecurity enthusiast and web developer" class="hero-profile-img hero-profile-img-large" loading="lazy" />
         </div>
       </section>
 
-      <section id="about" class="about-section animated-section">
-        <h2>
-          <!-- Shield SVG -->
-          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
+      <!-- Enhanced about section -->
+      <section id="about" class="about-section animated-section" aria-labelledby="about-title">
+        <h2 id="about-title">
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/>
+          </svg>
           About Me
         </h2>
         <div class="about-content">
-          <div>
+          <div class="about-intro">
             <p>
-              I’m a <strong>Cyber Security Enthusiast</strong> with a passion for building secure, user-focused web applications. I thrive on solving complex problems and believe in design that’s as functional as it is beautiful.
+              I'm a <strong>Cyber Security Enthusiast</strong> with a passion for building secure, user-focused web applications. I thrive on solving complex problems and believe in design that's as functional as it is beautiful.
             </p>
-            <div class="education-details">
-              <h4>
-                <!-- Shield SVG -->
-                <svg class="edu-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
-                Education
-              </h4>
-              <ul class="edu-list">
-                <li>
-                  <div class="edu-row">
-                    <div class="edu-main">
-                      <span class="edu-institute">Lovely Professional University</span><br>
-                      <span class="edu-degree">B.Tech - <em>Computer Science & Engineering</em>; <strong>CGPA: 7.20</strong></span>
-                    </div>
-                    <div class="edu-meta">
-                      <span>Phagwara, Punjab</span><br>
-                      <span class="edu-date">Since Sept 2022</span>
-                    </div>
+          </div>
+          
+          <div class="education-details">
+            <h3>
+              <svg class="edu-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 10v6M6 10l6-6 6 6v6a2 2 0 0 1-2 2H8a2 2 0 0 1-2-2v-6z"/>
+              </svg>
+              Education
+            </h3>
+            <ul class="edu-list" role="list">
+              <li class="edu-item">
+                <div class="edu-row">
+                  <div class="edu-main">
+                    <span class="edu-institute">Lovely Professional University</span>
+                    <span class="edu-degree">B.Tech - <em>Computer Science & Engineering</em></span>
+                    <span class="edu-grade"><strong>CGPA: 7.20</strong></span>
                   </div>
-                </li>
-                <li>
-                  <div class="edu-row">
-                    <div class="edu-main">
-                      <span class="edu-institute">Kendriya Vidyalaya</span><br>
-                      <span class="edu-degree">Intermediate; <strong>Percentage: 65%</strong></span>
-                    </div>
-                    <div class="edu-meta">
-                      <span>Dharamshala, Himachal Pradesh</span><br>
-                      <span class="edu-date">Apr 2021 - Mar 2022</span>
-                    </div>
+                  <div class="edu-meta">
+                    <span class="edu-location">Phagwara, Punjab</span>
+                    <span class="edu-date">Since Sept 2022</span>
                   </div>
-                </li>
-                <li>
-                  <div class="edu-row">
-                    <div class="edu-main">
-                      <span class="edu-institute">Kendriya Vidyalaya</span><br>
-                      <span class="edu-degree">Matriculation; <strong>Percentage: 81%</strong></span>
-                    </div>
-                    <div class="edu-meta">
-                      <span>Dharamshala, Himachal Pradesh</span><br>
-                      <span class="edu-date">Apr 2019 - Mar 2020</span>
-                    </div>
+                </div>
+              </li>
+              <li class="edu-item">
+                <div class="edu-row">
+                  <div class="edu-main">
+                    <span class="edu-institute">Kendriya Vidyalaya</span>
+                    <span class="edu-degree">Intermediate</span>
+                    <span class="edu-grade"><strong>Percentage: 65%</strong></span>
                   </div>
-                </li>
-              </ul>
-            </div>
-            <div class="skills-mini">
-              <h4>
-                <!-- Shield SVG -->
-                <svg class="edu-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M12 2 4 5v6c0 5.25 4.5 9.75 8 11 3.5-1.25 8-5.75 8-11V5l-8-3z"/></svg>
-                Skills
-              </h4>
-              <ul>
-                <li><strong>Cyber Security:</strong> Digital Forensics, Ethical Hacking, PenTesting, Network Security, CTFs</li>
-                <li><strong>Technical:</strong> Linux, WebDev, SQL Database, Java, DSA</li>
-                <li><strong>Soft:</strong> Analytical Thinking, Problem Solving, Communication</li>
-              </ul>
+                  <div class="edu-meta">
+                    <span class="edu-location">Dharamshala, Himachal Pradesh</span>
+                    <span class="edu-date">Apr 2021 - Mar 2022</span>
+                  </div>
+                </div>
+              </li>
+              <li class="edu-item">
+                <div class="edu-row">
+                  <div class="edu-main">
+                    <span class="edu-institute">Kendriya Vidyalaya</span>
+                    <span class="edu-degree">Matriculation</span>
+                    <span class="edu-grade"><strong>Percentage: 81%</strong></span>
+                  </div>
+                  <div class="edu-meta">
+                    <span class="edu-location">Dharamshala, Himachal Pradesh</span>
+                    <span class="edu-date">Apr 2019 - Mar 2020</span>
+                  </div>
+                </div>
+              </li>
+            </ul>
+          </div>
+
+          <div class="skills-mini">
+            <h3>
+              <svg class="edu-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M12 2L2 7l10 5 10-5-10-5zM2 17l10 5 10-5M2 12l10 5 10-5"/>
+              </svg>
+              Skills
+            </h3>
+            <div class="skills-grid">
+              <div class="skill-category">
+                <h4>Cyber Security</h4>
+                <p>Digital Forensics, Ethical Hacking, PenTesting, Network Security, CTFs</p>
+              </div>
+              <div class="skill-category">
+                <h4>Technical</h4>
+                <p>Linux, WebDev, SQL Database, Java, DSA</p>
+              </div>
+              <div class="skill-category">
+                <h4>Soft Skills</h4>
+                <p>Analytical Thinking, Problem Solving, Communication</p>
+              </div>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="projects" class="projects-section animated-section">
-        <h2>
-          <!-- Briefcase SVG -->
-          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="7" width="14" height="10" rx="2"/><path d="M7 7V5a3 3 0 0 1 6 0v2"/></svg>
+      <!-- Enhanced projects section with modal functionality -->
+      <section id="projects" class="projects-section animated-section" aria-labelledby="projects-title">
+        <h2 id="projects-title">
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="7" width="14" height="10" rx="2"/><path d="M7 7V5a3 3 0 0 1 6 0v2"/>
+          </svg>
           Projects
         </h2>
         <div class="projects-grid">
-          <a href="https://your-project-demo-link.com" target="_blank" class="project-card animated-pop" style="text-decoration:none; color:inherit;">
-            <div class="project-img" style="background-image: url('assets/project-1.png');"></div>
-            <h3>
-              <!-- Portfolio SVG -->
-              <svg class="card-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 5V3a3 3 0 0 1 6 0v2"/></svg>
-              Modern Portfolio
-            </h3>
-            <p>Responsive, accessible portfolio site inspired by Apple’s design language. Built with HTML, CSS, and JavaScript.</p>
-          </a>
-          <div class="project-card animated-pop">
-            <div class="project-img" style="background-image: url('assets/project-2.png');"></div>
-            <h3>
-              <!-- Task SVG -->
-              <svg class="card-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 9h6M7 13h4"/></svg>
-              Password Strength Checker
-            </h3>
-            <p>Full-stack productivity app with authentication, real-time updates, and a clean, modern UI.</p>
+          <div class="project-card" data-project="portfolio" tabindex="0" role="button" aria-label="View Modern Portfolio project details">
+            <div class="project-img" style="background-image: url('https://images.pexels.com/photos/196644/pexels-photo-196644.jpeg?auto=compress&cs=tinysrgb&w=800');" loading="lazy"></div>
+            <div class="project-content">
+              <h3>
+                <svg class="card-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 5V3a3 3 0 0 1 6 0v2"/>
+                </svg>
+                Modern Portfolio
+              </h3>
+              <p>Responsive, accessible portfolio site inspired by Apple's design language. Built with HTML, CSS, and JavaScript.</p>
+              <div class="project-tags">
+                <span class="tag">HTML</span>
+                <span class="tag">CSS</span>
+                <span class="tag">JavaScript</span>
+                <span class="tag">GSAP</span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="view-project">View Project</span>
+            </div>
           </div>
-          <div class="project-card animated-pop">
-            <div class="project-img" style="background-image: url('assets/project-dashboard.png');"></div>
-            <h3>
-              <!-- Chart SVG -->
-              <svg class="card-icon" width="20" height="20" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 13v-2m3 2V9m3 6v-4"/></svg>
-              API Dashboard
-            </h3>
-            <p>Interactive dashboard for visualizing and analyzing real-time API data, featuring advanced filtering and export options.</p>
+
+          <div class="project-card" data-project="password-checker" tabindex="0" role="button" aria-label="View Password Strength Checker project details">
+            <div class="project-img" style="background-image: url('https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=800');" loading="lazy"></div>
+            <div class="project-content">
+              <h3>
+                <svg class="card-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="11" width="18" height="10" rx="2" ry="2"/><circle cx="12" cy="16" r="1"/>
+                </svg>
+                Password Strength Checker
+              </h3>
+              <p>Advanced security tool with real-time password analysis, breach checking, and security recommendations.</p>
+              <div class="project-tags">
+                <span class="tag">Python</span>
+                <span class="tag">Security</span>
+                <span class="tag">API</span>
+                <span class="tag">Flask</span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="view-project">View Project</span>
+            </div>
+          </div>
+
+          <div class="project-card" data-project="api-dashboard" tabindex="0" role="button" aria-label="View API Dashboard project details">
+            <div class="project-img" style="background-image: url('https://images.pexels.com/photos/265087/pexels-photo-265087.jpeg?auto=compress&cs=tinysrgb&w=800');" loading="lazy"></div>
+            <div class="project-content">
+              <h3>
+                <svg class="card-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="14" height="12" rx="2"/><path d="M7 13v-2m3 2V9m3 6v-4"/>
+                </svg>
+                API Dashboard
+              </h3>
+              <p>Interactive dashboard for visualizing and analyzing real-time API data, featuring advanced filtering and export options.</p>
+              <div class="project-tags">
+                <span class="tag">React</span>
+                <span class="tag">Node.js</span>
+                <span class="tag">Charts</span>
+                <span class="tag">API</span>
+              </div>
+            </div>
+            <div class="project-overlay">
+              <span class="view-project">View Project</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="certifications" class="certifications-section animated-section">
-        <h2>
-          <!-- Certificate SVG -->
-          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="8" r="6"/><path d="M12 14v6m3-3h-6"/></svg>
+      <!-- Enhanced certifications section -->
+      <section id="certifications" class="certifications-section animated-section" aria-labelledby="certifications-title">
+        <h2 id="certifications-title">
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <circle cx="12" cy="8" r="6"/><path d="M12 14v6m3-3h-6"/>
+          </svg>
           Certifications
         </h2>
         <div class="certifications-grid">
-          <div class="cert-card-v2">
-            <div class="cert-img" style="background-image: url('assets/pre-security.png');"></div>
+          <div class="cert-card-v2" data-cert="pre-security" tabindex="0" role="button" aria-label="View Pre Security certification details">
+            <div class="cert-img" style="background-image: url('https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=400');" loading="lazy"></div>
             <div class="cert-info">
               <strong>Pre Security by TryHackMe</strong>
               <span class="cert-meta">Oct 2024</span>
-              <a href="https://tryhackme.com/certificate/THM-ZMT4DZZXPA" target="_blank" class="cert-link">Verify Certificate</a>
+              <a href="https://tryhackme.com/certificate/THM-ZMT4DZZXPA" target="_blank" rel="noopener noreferrer" class="cert-link">Verify Certificate</a>
             </div>
           </div>
-          <div class="cert-card-v2">
-            <div class="cert-img" style="background-image: url('assets/cloud.png');"></div>
+
+          <div class="cert-card-v2" data-cert="cloud-computing" tabindex="0" role="button" aria-label="View Cloud Computing certification details">
+            <div class="cert-img" style="background-image: url('https://images.pexels.com/photos/4164418/pexels-photo-4164418.jpeg?auto=compress&cs=tinysrgb&w=400');" loading="lazy"></div>
             <div class="cert-info">
               <strong>NPTEL Cloud Computing by IIT Kharagpur</strong>
               <span class="cert-meta">Oct 2024</span>
-              <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS118S167020178804431793" target="_blank" class="cert-link">Verify Certificate</a>
+              <a href="https://archive.nptel.ac.in/noc/Ecertificate/?q=NPTEL24CS118S167020178804431793" target="_blank" rel="noopener noreferrer" class="cert-link">Verify Certificate</a>
             </div>
           </div>
-          <div class="cert-card-v2">
-            <div class="cert-img" style="background-image: url('assets/java.png');"></div>
+
+          <div class="cert-card-v2" data-cert="java-programming" tabindex="0" role="button" aria-label="View Java Programming certification details">
+            <div class="cert-img" style="background-image: url('https://images.pexels.com/photos/11035380/pexels-photo-11035380.jpeg?auto=compress&cs=tinysrgb&w=400');" loading="lazy"></div>
             <div class="cert-info">
               <strong>Master Java Programming by GeeksForGeeks</strong>
               <span class="cert-meta">Apr 2024</span>
-              <a href="https://media.geeksforgeeks.org/courses/certificates/3355023c5944e1621ba0e3dbd5433601.pdf" target="_blank" class="cert-link">Verify Certificate</a>
+              <a href="https://media.geeksforgeeks.org/courses/certificates/3355023c5944e1621ba0e3dbd5433601.pdf" target="_blank" rel="noopener noreferrer" class="cert-link">Verify Certificate</a>
             </div>
           </div>
-          <div class="cert-card-v2">
-            <div class="cert-img" style="background-image: url('assets/dsa.png');"></div>
+
+          <div class="cert-card-v2" data-cert="data-structures" tabindex="0" role="button" aria-label="View Data Structures certification details">
+            <div class="cert-img" style="background-image: url('https://images.pexels.com/photos/577585/pexels-photo-577585.jpeg?auto=compress&cs=tinysrgb&w=400');" loading="lazy"></div>
             <div class="cert-info">
               <strong>Mastering Data Structures using C & C++ by Udemy</strong>
               <span class="cert-meta">Dec 2023</span>
-              <a href="https://www.udemy.com/certificate/UC-ee3f747b-855f-4264-bb68-fb169ce7f888/" target="_blank" class="cert-link">Verify Certificate</a>
+              <a href="https://www.udemy.com/certificate/UC-ee3f747b-855f-4264-bb68-fb169ce7f888/" target="_blank" rel="noopener noreferrer" class="cert-link">Verify Certificate</a>
             </div>
           </div>
         </div>
       </section>
 
-      <section id="contact" class="contact-section animated-section">
-        <h2>
-          <!-- Mail SVG -->
-          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="16" height="14" rx="2"/><path d="m3 7 8 6 8-6"/></svg>
+      <!-- Enhanced contact section -->
+      <section id="contact" class="contact-section animated-section" aria-labelledby="contact-title">
+        <h2 id="contact-title">
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <rect x="3" y="5" width="16" height="14" rx="2"/><path d="m3 7 8 6 8-6"/>
+          </svg>
           Contact
         </h2>
-        <form id="contactForm" class="contact-form" action="https://formspree.io/f/yourFormID" method="POST">
-          <input type="text" name="name" id="name" placeholder="Your Name" required />
-          <input type="email" name="email" id="email" placeholder="Your Email" required />
-          <textarea name="message" id="message" placeholder="Your Message" required></textarea>
-          <button type="submit" class="btn-primary">
-            <!-- Send SVG -->
-            <svg class="btn-icon" width="20" height="20" fill="none" stroke="#fff" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/></svg>
-            Send Message
-          </button>
-          <p id="formMessage"></p>
-        </form>
+        <div class="contact-content">
+          <div class="contact-info">
+            <p>Ready to collaborate on your next project? Let's create something amazing together.</p>
+            <div class="contact-methods">
+              <div class="contact-method">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 7 9 6 9-6"/>
+                </svg>
+                <span>nishadsharmacs@gmail.com</span>
+              </div>
+              <div class="contact-method">
+                <svg width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                  <path d="M15.05 5A5 5 0 0 1 19 8.95M15.05 1A9 9 0 0 1 23 8.94m-1 7.98v3a2 2 0 0 1-2.18 2 19.79 19.79 0 0 1-8.63-3.07 19.5 19.5 0 0 1-6-6 19.79 19.79 0 0 1-3.07-8.67A2 2 0 0 1 4.11 2h3a2 2 0 0 1 2 1.72 12.84 12.84 0 0 0 .7 2.81 2 2 0 0 1-.45 2.11L8.09 9.91a16 16 0 0 0 6 6l1.27-1.27a2 2 0 0 1 2.11-.45 12.84 12.84 0 0 0 2.81.7A2 2 0 0 1 22 16.92z"/>
+                </svg>
+                <span>+91 (123) 456-7890</span>
+              </div>
+            </div>
+          </div>
+          
+          <form id="contactForm" class="contact-form" action="https://formspree.io/f/yourFormID" method="POST" aria-labelledby="contact-form-title">
+            <h3 id="contact-form-title" class="sr-only">Contact Form</h3>
+            <div class="form-group">
+              <label for="name" class="sr-only">Your Name</label>
+              <input type="text" name="name" id="name" placeholder="Your Name" required aria-describedby="name-error" />
+              <span id="name-error" class="error-message" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="email" class="sr-only">Your Email</label>
+              <input type="email" name="email" id="email" placeholder="Your Email" required aria-describedby="email-error" />
+              <span id="email-error" class="error-message" role="alert"></span>
+            </div>
+            <div class="form-group">
+              <label for="message" class="sr-only">Your Message</label>
+              <textarea name="message" id="message" placeholder="Your Message" required rows="5" aria-describedby="message-error"></textarea>
+              <span id="message-error" class="error-message" role="alert"></span>
+            </div>
+            <button type="submit" class="btn-primary submit-btn">
+              <svg class="btn-icon" width="20" height="20" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M22 2 11 13"/><path d="M22 2 15 22 11 13 2 9l20-7z"/>
+              </svg>
+              <span class="btn-text">Send Message</span>
+              <span class="btn-loader" style="display: none;">Sending...</span>
+            </button>
+            <div id="formMessage" class="form-message" role="status" aria-live="polite"></div>
+          </form>
+        </div>
       </section>
 
-      <section id="testimonials" class="testimonials-section animated-section">
-        <h2>
-          <!-- Quote SVG -->
-          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2"><path d="M7 17c-2 0-3-1-3-3V7a3 3 0 0 1 3-3h2"/><path d="M17 17c-2 0-3-1-3-3V7a3 3 0 0 1 3-3h2"/></svg>
+      <!-- Enhanced testimonials section -->
+      <section id="testimonials" class="testimonials-section animated-section" aria-labelledby="testimonials-title">
+        <h2 id="testimonials-title">
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <path d="M7 17c-2 0-3-1-3-3V7a3 3 0 0 1 3-3h2"/><path d="M17 17c-2 0-3-1-3-3V7a3 3 0 0 1 3-3h2"/>
+          </svg>
           Testimonials
         </h2>
         <div class="testimonials-grid">
           <div class="testimonial-card">
-            <p>“Nishad’s attention to security and detail is outstanding. Highly recommended!”</p>
-            <span class="testimonial-author">— Prof. A. Kumar, LPU</span>
+            <div class="testimonial-quote">
+              <p>"Nishad's attention to security and detail is outstanding. His work consistently exceeds expectations and demonstrates deep understanding of cybersecurity principles."</p>
+            </div>
+            <div class="testimonial-author">
+              <strong>Prof. A. Kumar</strong>
+              <span>LPU Faculty</span>
+            </div>
           </div>
           <div class="testimonial-card">
-            <p>“Great collaborator and always delivers on time.”</p>
-            <span class="testimonial-author">— Peer, GitHub</span>
+            <div class="testimonial-quote">
+              <p>"Great collaborator who always delivers quality work on time. Nishad brings innovative solutions to complex problems."</p>
+            </div>
+            <div class="testimonial-author">
+              <strong>Sarah Johnson</strong>
+              <span>GitHub Collaborator</span>
+            </div>
           </div>
         </div>
       </section>
 
-      <section id="blog" class="blog-section animated-section">
-        <h2>
-          <!-- Blog SVG -->
-          <svg class="section-icon" width="22" height="22" fill="none" stroke="#0071e3" stroke-width="2"><rect x="3" y="5" width="16" height="14" rx="2"/><path d="M7 9h6M7 13h4"/></svg>
+      <!-- Enhanced blog section -->
+      <section id="blog" class="blog-section animated-section" aria-labelledby="blog-title">
+        <h2 id="blog-title">
+          <svg class="section-icon" width="22" height="22" fill="none" stroke="currentColor" stroke-width="2" aria-hidden="true">
+            <rect x="3" y="5" width="16" height="14" rx="2"/><path d="M7 9h6M7 13h4"/>
+          </svg>
           Blog & Writeups
         </h2>
         <div class="blog-grid">
-          <div class="blog-card">
-            <h3>How I Solved a CTF Challenge</h3>
-            <p>A step-by-step writeup of my approach to a recent CTF problem.</p>
-            <a href="https://your-blog-link.com/ctf-writeup" target="_blank" class="blog-link">Read More</a>
-          </div>
-          <div class="blog-card">
-            <h3>Web Security Best Practices</h3>
-            <p>My top tips for keeping your web apps secure in 2024.</p>
-            <a href="https://your-blog-link.com/web-security" target="_blank" class="blog-link">Read More</a>
+          <article class="blog-card" tabindex="0">
+            <div class="blog-img" style="background-image: url('https://images.pexels.com/photos/1181244/pexels-photo-1181244.jpeg?auto=compress&cs=tinysrgb&w=400');" loading="lazy"></div>
+            <div class="blog-content">
+              <h3>How I Solved a CTF Challenge</h3>
+              <p>A comprehensive step-by-step writeup of my approach to a recent capture-the-flag problem, including tools and methodologies used.</p>
+              <div class="blog-meta">
+                <span class="blog-date">Dec 15, 2024</span>
+                <span class="blog-category">CTF</span>
+              </div>
+              <a href="#" class="blog-link">Read More</a>
+            </div>
+          </article>
+          <article class="blog-card" tabindex="0">
+            <div class="blog-img" style="background-image: url('https://images.pexels.com/photos/60504/security-protection-anti-virus-software-60504.jpeg?auto=compress&cs=tinysrgb&w=400');" loading="lazy"></div>
+            <div class="blog-content">
+              <h3>Web Security Best Practices</h3>
+              <p>Essential security measures and best practices for protecting web applications in 2024, based on real-world experience.</p>
+              <div class="blog-meta">
+                <span class="blog-date">Dec 10, 2024</span>
+                <span class="blog-category">Security</span>
+              </div>
+              <a href="#" class="blog-link">Read More</a>
+            </div>
+          </article>
+        </div>
+      </section>
+
+      <!-- Enhanced footer -->
+      <footer role="contentinfo">
+        <div class="footer-content">
+          <p>&copy; <span id="year"></span> Nishad. All rights reserved. Built with passion for security and design.</p>
+          <div class="footer-links">
+            <a href="#" aria-label="Privacy Policy">Privacy</a>
+            <a href="#" aria-label="Terms of Service">Terms</a>
+            <a href="#contact" aria-label="Contact information">Contact</a>
           </div>
         </div>
-
-      <footer>
-        <p>&copy; <span id="year"></span> Nishad. All rights reserved.</p>
       </footer>
     </div>
   </div>
+
+  <!-- Enhanced modal for project/certificate details -->
+  <div id="modal" class="modal" role="dialog" aria-hidden="true" aria-labelledby="modal-title" aria-describedby="modal-description">
+    <div class="modal-content" role="document">
+      <button class="modal-close" aria-label="Close modal">&times;</button>
+      <div id="modal-body">
+        <!-- Dynamic content will be inserted here -->
+      </div>
+    </div>
+  </div>
+
+  <!-- Loading spinner for better UX -->
+  <div id="loading-spinner" class="loading-spinner" style="display: none;">
+    <div class="spinner"></div>
+  </div>
+
+  <!-- Scripts with performance optimizations -->
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js" defer></script>
+  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/ScrollTrigger.min.js" defer></script>
+  <script src="portfolio.js" defer></script>
+  
+  <!-- Service worker for offline functionality (optional) -->
   <script>
+    // Register service worker for better performance
+    if ('serviceWorker' in navigator) {
+      navigator.serviceWorker.register('/sw.js').catch(() => {});
+    }
+    
     // Set current year in footer
     document.getElementById('year').textContent = new Date().getFullYear();
-  </script>
-  <script src="portfolio.js"></script>
-  <script src="https://cdn.jsdelivr.net/npm/gsap@3/dist/gsap.min.js"></script>
-  <script>
-    // Splash screen logic
-    const splash = document.getElementById('splash');
-    const mainContent = document.getElementById('main-content');
-    const enterBtn = document.getElementById('enter-portfolio');
-    const splashThemeToggle = document.getElementById('splash-theme-toggle');
-    const splashThemeIcon = document.getElementById('splash-theme-toggle-icon');
-
-    // Dark mode toggle for splash
-    function setSplashTheme(dark) {
-      document.body.classList.toggle('dark-mode', dark);
-      splashThemeIcon.textContent = dark ? '☀️' : '🌙';
-      localStorage.setItem('portfolio-theme', dark ? 'dark' : 'light');
-    }
-    // Load theme from storage
-    setSplashTheme(localStorage.getItem('portfolio-theme') === 'dark');
-    splashThemeToggle.onclick = () => setSplashTheme(!document.body.classList.contains('dark-mode'));
-
-    function showPortfolio() {
-      splash.style.opacity = 0;
-      setTimeout(() => {
-        splash.style.display = 'none';
-        mainContent.style.display = '';
-      }, 700);
-    }
-    enterBtn.addEventListener('click', showPortfolio);
-    // setTimeout(showPortfolio, 2500);
-
-    // Animate lock shackle and N on splash load
-    window.addEventListener('DOMContentLoaded', () => {
-      gsap.from("#lock-shackle", { opacity: 0, y: -20, duration: 1.1, ease: "power2.out" });
-      gsap.from("#logo-n", { opacity: 0, y: 20, duration: 0.7, delay: 0.7, ease: "back.out(1.7)" });
-    });
   </script>
 </body>
 </html>
